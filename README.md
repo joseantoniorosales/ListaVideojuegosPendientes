@@ -3,7 +3,7 @@ Como su nombre indica, será una aplicación en la que se podrán añadir, modif
 
 ### 1º: index/login
 
-Página principal
+
 ![](imgREADME/login.png)
 
 La página inicial de la aplicación web es un login que nos mostrará un mensaje de error si el usuario o la contraseña no son correctas. Si lo son, nos redirigirá a la página principal donde se realizarán las operaciones. Para realizar esta acción, llamo a otro jsp donde se realiza el check de usuario.
@@ -37,3 +37,8 @@ La última función nos permitirá borrar de la base de datos un juego ya almace
 ### Próximas actualizaciones
 
 Tengo planeado implementar nuevos campos en la base de datos para escribir una pequeña sinopsis y la plataforma donde se encuentra, así como mejorar el sistema de login y hacer una ventana para asegurarte de si quieres borrar el juego de la base de datos.
+
+
+#### Enlace video youtube
+
+Link: https://youtu.be/gBZzPCRqjVk
