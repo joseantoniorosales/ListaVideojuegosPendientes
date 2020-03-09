@@ -17,10 +17,15 @@
     </head>
 
     <style>
-        body {background-image: url("magic_circuit.jpg")}
+        body {background-image: url("magic_circuit.jpg");
+              background-size: cover;}
+
+        @font-face {font-family: 'CenturyGothic';
+                    src: url("Century_Gothic.ttf")}
+
     </style>
 
-    <body>
+    <body style="font-family: 'CenturyGothic'; color: white;">
         <%
             Class.forName("com.mysql.jdbc.Driver");
             Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/videojuegos", "root", "");
@@ -40,7 +45,7 @@
             conexion.close();
         %>
         <br>
-        <a href="pagPrincipal.jsp" class="btn btn-primary"><span class="glyphicon glyphicon-home"></span> Página principal</button>
+        <a href="pagPrincipal.jsp" class="btn btn-primary" style="font-family: 'CenturyGothic';"><span class="glyphicon glyphicon-home"></span> Página principal</button>
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="js/jquery.min.js"></script>
         <script src="js/bootstrap.min.js"></script>

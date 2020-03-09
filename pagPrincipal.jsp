@@ -16,21 +16,27 @@
         <title>Listado Videojuegos</title>
     </head>
 
-    
-     <style>
-      body {background-image: url("magic_circuit.jpg");}
-  </style>
-    
+
+    <style>
+        body {background-image: url("magic_circuit.jpg");
+              background-size: cover;
+        }
+
+        @font-face {font-family: 'CenturyGothic';
+                    src: url("Century_Gothic.ttf")}
+
+    </style>
+
     <body>
         <div class="container">
             <br><br>			
-            <div class="panel panel-primary">
-                <div class="panel-heading text-center"><h2>VIDEOJUEGOS PENDIENTES</h2></div>
+            <div class="panel panel-info">
+                <div class="panel-heading text-center" style="font-family: 'CenturyGothic'; "><h2>VIDEOJUEGOS PENDIENTES</h2></div>
 
                 <%
                     if (session.getAttribute("usuario") == null) {
                 %>
-                <a href="formulario-login.jsp">Entrar</a>
+                <a href="index.jsp">Entrar</a>
                 <%
                 } else {
                 %>
@@ -49,7 +55,7 @@
                     ResultSet listado = s.executeQuery("SELECT * FROM videojuego");
                 %>
 
-                <table class="table table-striped">
+                <table class="table table-striped" style="font-family: 'CenturyGothic'; background-color: lightblue;">
                     <tr><th>ID</th><th>Nombre</th><th>Numero</th><th>Saga</th><th>Género</th></tr>
                     <form method="get" action="addGame.jsp">
                         <tr><td><input type="text" name="juegoID" size="11"></td>
@@ -57,8 +63,8 @@
                             <td><input type="text" name="numJuego" size="5"></td>
                             <td><input type="text" name="sagaJuego" size="20"></td>
                             <td><input type="text" name="genreJuego" size="20"></td>
-                            
-                            <td><button type="submit" value="Añadir" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Añadir</button></td><td></td></tr>           
+
+                            <td><button type="submit" value="Añadir" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> Añadir</button></td><td></td></tr>           
                     </form>
 
 
@@ -70,7 +76,7 @@
                             out.println("<td>" + listado.getString("numJuego") + "</td>");
                             out.println("<td>" + listado.getString("sagaJuego") + "</td>");
                             out.println("<td>" + listado.getString("genreJuego") + "</td>");
-                            
+
                     %>
                     <td>
                         <form method="get" action="modGame.jsp">
@@ -79,7 +85,7 @@
                             <input type="hidden" name="numJuego" value="<%=listado.getString("numJuego")%>">
                             <input type="hidden" name="sagaJuego" value="<%=listado.getString("sagaJuego")%>">
                             <input type="hidden" name="genreJuego" value="<%=listado.getString("genreJuego")%>">
-                            <button type="submit"  class="btn btn-info"><span class="glyphicon glyphicon-pencil"></span> Modificar</button>
+                            <button type="submit"  class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span> Modificar</button>
                         </form>
                     </td>
 
@@ -97,8 +103,8 @@
                     %>
 
                 </table>
-        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-        <script src="js/jquery.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-    </body>
-</html>
+                <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+                <script src="js/jquery.min.js"></script>
+                <script src="js/bootstrap.min.js"></script>
+                </body>
+                </html>

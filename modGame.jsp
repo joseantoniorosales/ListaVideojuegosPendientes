@@ -11,11 +11,16 @@
 
         <title>Modificar Juego</title>
     </head>
-    
+
     <style>
-        body {background-image: url("magic_circuit.jpg");}
+        body {background-image: url("magic_circuit.jpg");
+              background-size: cover;}
+
+        @font-face {font-family: 'CenturyGothic';
+                    src: url("Century_Gothic.ttf")}
+
     </style>
-    <body>
+    <body style="font-family: 'CenturyGothic';">
         <% request.setCharacterEncoding("UTF-8");%>
         <div class="container">
             <br><br>
@@ -36,15 +41,13 @@
                         <label>&nbsp;&nbsp;Género:&nbsp;</label><input type="text" name="genero" size="20" value="<%= request.getParameter("genreJuego")%>">
                     </div>
                     <hr>
-                    &nbsp;&nbsp;<a href="index.jsp" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span>Cancelar</a>
+                    &nbsp;&nbsp;<a href="pagPrincipal.jsp" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span>Cancelar</a>
                     <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-ok"></span>Aceptar</button><br><br>
                 </form>
 
-            </div>
-            <div class="text-center">&copy; José Ant Rosales Girón</div>
-        </div>
-        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-        <script src="js/jquery.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-    </body>
-</html>
+
+                <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+                <script src="js/jquery.min.js"></script>
+                <script src="js/bootstrap.min.js"></script>
+                </body>
+                </html>
