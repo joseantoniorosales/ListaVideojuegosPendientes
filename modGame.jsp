@@ -11,6 +11,10 @@
 
         <title>Modificar Juego</title>
     </head>
+    
+    <style>
+        body {background-image: url("magic_circuit.jpg");}
+    </style>
     <body>
         <% request.setCharacterEncoding("UTF-8");%>
         <div class="container">

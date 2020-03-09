@@ -15,6 +15,11 @@
 
         <title>Modificar Juego</title>
     </head>
+
+    <style>
+        body {background-image: url("magic_circuit.jpg")}
+    </style>
+
     <body>
         <%
             Class.forName("com.mysql.jdbc.Driver");
@@ -24,18 +29,18 @@
             request.setCharacterEncoding("UTF-8");
 
             String actualizacion = "UPDATE videojuego SET "
-                    + "nombre='" + request.getParameter("nomJuego")
-                    + "', número=" + Integer.valueOf(request.getParameter("numJuego"))
-                    + ", saga=" + request.getParameter("sagaJuego")
-                    + ", género='" + request.getParameter("genreJuego")
-                    + "' WHERE juegoID=" + Integer.valueOf(request.getParameter("juegoID"));
+                    + "nomJuego=' " + request.getParameter("nombre")
+                    + " ', sagaJuego='" + request.getParameter("saga")
+                    + " ', genreJuego='" + request.getParameter("genero")
+                    + " ', numJuego=" + Integer.valueOf(request.getParameter("numero"))
+                    + " WHERE juegoID=" + Integer.valueOf(request.getParameter("juegoID"));
             s.execute(actualizacion);
             out.println("Información actualizada correctamente.");
 
             conexion.close();
         %>
         <br>
-        <a href="index.jsp" class="btn btn-primary"><span class="glyphicon glyphicon-home"></span> Página principal</button>
+        <a href="pagPrincipal.jsp" class="btn btn-primary"><span class="glyphicon glyphicon-home"></span> Página principal</button>
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="js/jquery.min.js"></script>
         <script src="js/bootstrap.min.js"></script>

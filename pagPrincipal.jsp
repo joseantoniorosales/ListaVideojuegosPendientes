@@ -16,11 +16,31 @@
         <title>Listado Videojuegos</title>
     </head>
 
+    
+     <style>
+      body {background-image: url("magic_circuit.jpg");}
+  </style>
+    
     <body>
         <div class="container">
             <br><br>			
             <div class="panel panel-primary">
                 <div class="panel-heading text-center"><h2>VIDEOJUEGOS PENDIENTES</h2></div>
+
+                <%
+                    if (session.getAttribute("usuario") == null) {
+                %>
+                <a href="formulario-login.jsp">Entrar</a>
+                <%
+                } else {
+                %>
+                Logueado como <%= session.getAttribute("usuario")%></a>
+                (<a href="logout.jsp">logout</a>)
+                <%
+                    }
+                %>
+
+
                 <%
                     Class.forName("com.mysql.jdbc.Driver");
                     Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/videojuegos", "root", "");
@@ -30,17 +50,18 @@
                 %>
 
                 <table class="table table-striped">
-                    <tr><th>ID</th><th>Nombre</th><th>Numero</th><th>Saga</th><th>Genero</th></tr>
+                    <tr><th>ID</th><th>Nombre</th><th>Numero</th><th>Saga</th><th>Género</th></tr>
                     <form method="get" action="addGame.jsp">
                         <tr><td><input type="text" name="juegoID" size="11"></td>
                             <td><input type="text" name="nomJuego" size="50"></td>
                             <td><input type="text" name="numJuego" size="5"></td>
                             <td><input type="text" name="sagaJuego" size="20"></td>
                             <td><input type="text" name="genreJuego" size="20"></td>
+                            
                             <td><button type="submit" value="Añadir" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Añadir</button></td><td></td></tr>           
                     </form>
-                
-                   
+
+
                     <%
                         while (listado.next()) {
                             out.println("<tr><td>");
@@ -49,6 +70,7 @@
                             out.println("<td>" + listado.getString("numJuego") + "</td>");
                             out.println("<td>" + listado.getString("sagaJuego") + "</td>");
                             out.println("<td>" + listado.getString("genreJuego") + "</td>");
+                            
                     %>
                     <td>
                         <form method="get" action="modGame.jsp">
@@ -60,14 +82,14 @@
                             <button type="submit"  class="btn btn-info"><span class="glyphicon glyphicon-pencil"></span> Modificar</button>
                         </form>
                     </td>
-                    
+
                     <td>
                         <form method="get" action="deleteGame.jsp">
                             <input type="hidden" name="juegoID" value="<%=listado.getString("juegoID")%>"/>
                             <button type="submit" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span> Eliminar</button>
                         </form>
                     </td></tr>
-                
+
                     <%
                         } // while   
 
@@ -75,9 +97,6 @@
                     %>
 
                 </table>
-            </div>
-            <div class="text-center">&copy; José Antonio Rosales Girón</div>
-        </div>
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="js/jquery.min.js"></script>
         <script src="js/bootstrap.min.js"></script>

@@ -19,6 +19,6 @@
 
             s.close();
         %>	
-        <script>document.location = "index.jsp"</script> 
+        <script>document.location = "pagPrincipal.jsp"</script> 
     </body>
 </html>
