@@ -1,5 +1,5 @@
 # ListaVideojuegosPendientes
-Como su nombre indica, será una aplicación en la que se podrán añadir, modificar y borrar videojuegos pendientes de jugar, así como añadir información relevante sobre el mismo.
+Como su nombre indica, será una aplicación en la que se podrán añadir, modificar y borrar videojuegos pendientes de jugar, así como añadir información relevante sobre el mismo. El código utilizado se encuentra en la carpeta web de este repositorio.
 
 ### 1º: index/login
 
@@ -32,3 +32,7 @@ La siguiente función nos permitirá modificar la información de un juego ya al
 
 La última función nos permitirá borrar de la base de datos un juego ya almacenado. Una vez hecho click en borrar, se llama a la función deleteGame.jsp y se recarga la página con los datos totalmente borrados.
 
+
+### Próximas actualizaciones
+
+Tengo planeado implementar nuevos campos en la base de datos para escribir una pequeña sinopsis y la plataforma donde se encuentra, así como mejorar el sistema de login y hacer una ventana para asegurarte de si quieres borrar el juego de la base de datos.
