@@ -4,7 +4,7 @@ Como su nombre indica, será una aplicación en la que se podrán añadir, modif
 ### 1º: index/login
 
 Página principal
-![](img_README/login.png)
+![](imgREADME/login.png)
 
 La página inicial de la aplicación web es un login que nos mostrará un mensaje de error si el usuario o la contraseña no son correctas. Si lo son, nos redirigirá a la página principal donde se realizarán las operaciones. Para realizar esta acción, llamo a otro jsp donde se realiza el check de usuario.
 
